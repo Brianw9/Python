@@ -28,8 +28,15 @@ goodDivCards = ['A Dab of Ink', 'A Mother\'s Parting Gift', 'Anarchy\'s Price', 
 
 
 
-class DivCardCall:
+class APIGet:
     divCardAPIResponse = json.loads(requests.get(divCardAPI).text)  #Calls for the divCardAPI
+    prophecyAPIResponse = json.loads(requests.get(prophecyAPI).text)
+    fragmentAPIResponse = json.loads(requests.get(fragmentAPI).text)
+    uniqueMapAPIResponse = json.loads(requests.get(uniqueMapAPI).text)
+    uniqueAccessoryAPIResponse = json.loads(requests.get(uniqueAccessoryAPI).text)
+    uniqueArmourAPIResponse = json.loads(requests.get(uniqueArmourAPI).text)
+    uniqueFlaskAPIResponse = json.loads(requests.get(uniqueFlaskAPI).text)
+    uniqueWeaponAPIResponse = json.loads(requests.get(uniqueWeaponAPI).text)
 
 class DivCardValues:
     def __init__(self, cardname, itemname, value, corrupted):       #setup for appending deserialized values to dictionaries
@@ -40,7 +47,7 @@ class DivCardValues:
 
 
 
-for i in DivCardCall.divCardAPIResponse['lines']:           #parse through initial API list
+for i in APIGet.divCardAPIResponse['lines']:           #parse through initial API list
     if i['name'] in goodDivCards:                           #checks if the card is good
         DivCardValues.cardname = i['name']
         DivCardValues.itemname = i['explicitModifiers'][0]['text']      #setting values to DivCardValues class
@@ -55,5 +62,11 @@ for i in DivCardCall.divCardAPIResponse['lines']:           #parse through initi
         divCardDict['value'] = DivCardValues.value
         divCardDict['corrupted'] = DivCardValues.corrupted
         divCardListofDict += [copy.deepcopy(divCardDict)]               #appending the temporary dictionary to the global list of DivCard dictionaries
-print (divCardListofDict)
+
+print('hello world')
+
+
+
+
+
 
