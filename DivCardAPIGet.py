@@ -1,6 +1,7 @@
 import requests
 import json
 import copy
+import csv
 
 leagueName = "Betrayal"                                                                             #League name easily to update
 divCardAPI = "http://poe.ninja/api/Data/GetDivinationCardsOverview?league=" + leagueName
@@ -50,11 +51,11 @@ class DivCardValues:
 for i in APIGet.divCardAPIResponse['lines']:           #parse through initial API list
     if i['name'] in goodDivCards:                           #checks if the card is good
         DivCardValues.cardname = i['name']
-        DivCardValues.itemname = i['explicitModifiers'][0]['text']      #setting values to DivCardValues class
+        DivCardValues.itemname = str(i['explicitModifiers'][0]['text'])     #setting values to DivCardValues class
         DivCardValues.value = (i['chaosValue']*i['stackSize'])
         if len(i['explicitModifiers']) >= 2:
             DivCardValues.corrupted = True                                      #checking whether the outcome of the card is corrupted or not
-            DivCardValues.itemname = DivCardValues.itemname + ' Corrupted'      #also adds corrupted to the name to differentiate between two of the same items
+            DivCardValues.itemname = "".join(DivCardValues.itemname.rstrip() + 'Corrupted')      #also adds corrupted to the name to differentiate between two of the same items
         else:
             DivCardValues.corrupted = False
         divCardDict['cardname'] = DivCardValues.cardname
@@ -63,8 +64,12 @@ for i in APIGet.divCardAPIResponse['lines']:           #parse through initial AP
         divCardDict['corrupted'] = DivCardValues.corrupted
         divCardListofDict += [copy.deepcopy(divCardDict)]               #appending the temporary dictionary to the global list of DivCard dictionaries
 
-print('hello world')
-
+with open('divcards.csv', 'w') as csv_file:
+    fieldnames = ['cardname', 'itemname', 'value','corrupted', 'item_value']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+    for i in divCardListofDict:
+        writer.writerow(i)
 
 
 
