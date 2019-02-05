@@ -19,7 +19,7 @@ divCardListofDict = []                                                          
 #Hand picked cards with parseable outcomes
 goodDivCards = ['A Dab of Ink', 'A Mother\'s Parting Gift', 'Anarchy\'s Price', 'Audacity', 'Beauty Through Death', 'Death', 'Forbidden Power', 'Humility',
                 'Hunter\'s Reward', 'Immortal Resolve', 'Last Hope', 'Lingering Remnants', 'Might is Right', 'Pride Before the Fall', 'Rats', 'Rebirth', 'Scholar of the Seas',
-                'The Arena Champion', 'The Army of Blood','The Artist','The Avenger','The Beast','The Betrayal','The Blazing Fire','The Brittle Emperor','The Coming Storm',
+                'The Arena Champion', 'The Army of Blood','The Artist','The Beast','The Betrayal','The Blazing Fire','The Brittle Emperor','The Coming Storm',
                 'The Conduit','The Cursed King','The Darkest Dream','The Demoness', 'The Doctor','The Dragon','The Dragon\'s Heart', 'The Dreamland','The Drunken Aristocrat',
                 'The Endless Darkness', 'The Enlightened', 'The Fathomless Depths','The Feast','The Fiend','The Fletcher','The Formless Seas','The Forsaken', 'The Harvester',
                 'The Hermit', 'The Hunger', 'The Immortal', 'The Incantation', 'The Iron Bard', 'The Jeweller\'s Boon', 'The King\'s Heart', 'The Last One Standing', 'The Life Thief',
