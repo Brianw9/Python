@@ -76,10 +76,10 @@ with open('divcards.csv', 'w') as csv_file:
         writer.writerow(i)
 colnames = ['cardname','itemname','value','corrupted','item_value']
 data = pandas.read_csv('divcards.csv', names=colnames)
-itemname = data.itemname.tolist()
+itemnames = data.itemname.tolist()
 
 for i in APIGet.uniqueAccessoryAPIResponse['lines']:
-    if i['name'] in itemname:
-        print(i['name'])
-
+    for x in itemnames:
+        if i['name'] in x:
+            print(i['name'])
 
