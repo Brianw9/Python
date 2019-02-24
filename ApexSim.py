@@ -5,10 +5,6 @@
 from random import randint
 import time
 
-print("Are you ready to be the Apex Champion?")
-time.sleep(2)
-print("Choose Your Squad.")
-
 Legends = {"Bloodhound":0.1,"Gibraltar":0.1, "Lifeline":0.15, "Pathfinder":0.15, "Wraith":0.30, "Bangalore":0.5, "Caustic":0.14, "Mirage":0.20, "Hyper":.80}
 #Legends to choose from and their individual win multiplier
 
@@ -130,7 +126,11 @@ def was_champion():
         return "were"
     else:
         return "were not"
-
+    
+    
+print("Are you ready to be the Apex Champion?")
+time.sleep(2)
+print("Choose Your Squad.")
 choose_squad()
 time.sleep(2)
 print("The squad is all set, lets see where we're dropping.")
