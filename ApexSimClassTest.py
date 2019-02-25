@@ -80,8 +80,6 @@ def get_win_fight(droparea,squadmulti):
         0.25:2,
         0.1:1,
     }
-    global fights_won
-
     while i < maxes[droparea]:
         if randint(0,100) <= (squadmulti * 100):
             fights_won.append(True)
