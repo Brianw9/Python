@@ -1,16 +1,14 @@
 #Brian Weed February 2019
 #Text based Apex Legends Simulator
 #definitely not finished
+#need to remove global variables and pass functions through each other to get variables
+#global variables bad
 
 from random import randint
 import time
 
 Legends = {"Bloodhound":0.1,"Gibraltar":0.1, "Lifeline":0.15, "Pathfinder":0.15, "Wraith":0.30, "Bangalore":0.5, "Caustic":0.14, "Mirage":0.20, "Hyper":.80}
 #Legends to choose from and their individual win multiplier
-
-squad1 = ""
-squad2 = ""
-squad3 = ""
 
 HighTierLoot = ["Artillery","Relay","The Pit","Runoff","Bunker","Airbase","Swamps","Repulsor","Thunderdome","Water Treatment"] #going to expand on multiplier for certain random drops in the future
 MidTierLoot = ["Slum Lakes", "Cascades","Wetlands","Bridges","Skull Town"]
@@ -33,9 +31,6 @@ SquadAll = []  #Keeps a list of the squad names, could be useful later
 fights_won = []
 
 def choose_squad():
-    global squad1
-    global squad2
-    global squad3
     global baselineSquadMulti
     global SquadAll
     squad1 = input("First Legend: (Type \'list\' for all options)")
