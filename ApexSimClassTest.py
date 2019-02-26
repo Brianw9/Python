@@ -1,6 +1,7 @@
 #Brian Weed February 2019
 #Text based Apex Legends Simulator
 #definitely not finished
+#working, but probably need to update function and variable names to be more consistent
 
 from random import randint
 import time
